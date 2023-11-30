@@ -1,0 +1,21 @@
+// Lists of names and surnames
+const names = ['John', 'Jane', 'Bob', 'Alice', 'Charlie', 'Emma', 'David', 'Olivia'];
+const surnames = ['Smith', 'Johnson', 'Williams', 'Jones', 'Brown', 'Davis', 'Miller', 'Wilson'];
+
+// Function to generate a random number within a given range
+function getRandomIndex(array) {
+  return Math.floor(Math.random() * array.length);
+}
+
+// Function to generate a random name and surname
+function generateRandomName() {
+  const randomName = names[getRandomIndex(names)];
+  const randomSurname = surnames[getRandomIndex(surnames)];
+  return `${randomName} ${randomSurname}`;
+}
+
+// Generating 100 random names and surnames
+const randomNames = Array.from({ length: 100 }, () => generateRandomName());
+
+// Logging the results to the console
+console.log(randomNames);
